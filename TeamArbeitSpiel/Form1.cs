@@ -96,7 +96,7 @@ namespace TeamArbeitSpiel
         private void Voting()
         {
 
-            for(int i = 0; i < )
+            for (int i = 0; i < ) ;
 
 
         }
