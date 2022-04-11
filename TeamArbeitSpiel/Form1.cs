@@ -26,15 +26,15 @@ namespace TeamArbeitSpiel
         {
             
         }
-
+        int AnzSpieler;
 
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Random Rand = new Random();
-             RandomZahl = Rand.Next(1, 100);
+            int RandomZahl = Rand.Next(1, 100);
 
-            int AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
 
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
@@ -95,8 +95,24 @@ namespace TeamArbeitSpiel
 
         private void Voting()
         {
+            int left = 400;
 
-            for (int i = 0; i < ) ;
+            for (int i = 0; i < AnzSpieler;i++)
+            {
+                Label Spieler = new Label();
+                Spieler.Text = "Spieler: " + (i + 1);
+                Spieler.Left = left;
+                Spieler.Top = 300;
+                this.Controls.Add(Spieler);
+
+                Button Vote = new Button();
+                Vote.Text = "Wähle Spieler " + (i + 1);
+                Vote.Left = left;
+                Vote.Top = 320;
+                this.Controls.Add(Vote);
+                left = left + 30;
+
+            }
 
 
         }
