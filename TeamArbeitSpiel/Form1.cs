@@ -32,7 +32,7 @@ namespace TeamArbeitSpiel
         private void btnPlay_Click(object sender, EventArgs e)
         {
             Random Rand = new Random();
-            int RandomZahl = Rand.Next(1, 100);
+            RandomZahl = Rand.Next(1, 100);
 
             AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
 
@@ -87,16 +87,85 @@ namespace TeamArbeitSpiel
             
             if (Spielerzahlen.Count == Convert.ToInt32(txbAnzSpieler.Text))
             {
-                BeginneAuswertung();
+                Voting();
+
             }
 
-        
-        }
 
+        }
+        List<int> votes = new List<int>();
+        int votedPlayers = 0;
+        int votep1;
+        int votep2;
+        int votep3;
+        int votep4;
+        int votep5;
+        int votep6;
+        int votep7;
+        int votep8;
+        int votep9;
+        private void Vote_CLick(object sender, EventArgs e)
+        {
+            Button Vote_click = (Button)sender;
+            votedPlayers++;
+           
+            if(Vote_click.Text == "Wähle Spieler 1")
+            {
+                votep1++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 2")
+            {
+                votep2++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 3")
+            {
+                votep3++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 4")
+            {
+                votep4++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 5")
+            {
+                votep5++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 6")
+            {
+                votep6++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 7")
+            {
+                votep7++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 8")
+            {
+                votep8++;
+            }
+            if (Vote_click.Text == "Wähle Spieler 9")
+            {
+                votep9++;
+            }
+
+            if (votedPlayers == AnzSpieler)
+            {
+                votes.Add(votep1);
+                votes.Add(votep2);
+                votes.Add(votep3);
+                votes.Add(votep4);
+                votes.Add(votep5);
+                votes.Add(votep6);
+                votes.Add(votep7);
+                votes.Add(votep8);
+                votes.Add(votep9);
+                int gevotetindex =  votes.IndexOf(votes.Max());
+
+                BeginneAuswertung(gevotetindex);
+            }
+        }
         private void Voting()
         {
             int left = 400;
-
+           
             for (int i = 0; i < AnzSpieler;i++)
             {
                 Label Spieler = new Label();
@@ -108,24 +177,25 @@ namespace TeamArbeitSpiel
                 Button Vote = new Button();
                 Vote.Text = "Wähle Spieler " + (i + 1);
                 Vote.Left = left;
-                Vote.Top = 320;
+                Vote.Top = 340;
                 this.Controls.Add(Vote);
-                left = left + 30;
+                left = left + 110;
+                Vote.Click += Vote_CLick;
 
             }
 
+            
 
         }
-        private void BeginneAuswertung()
+        private void BeginneAuswertung(int index)
         {
 
-            Voting();
 
 
 
-           int indexdesgrössten = Spielerzahlen.IndexOf(Spielerzahlen.Max());
 
-            int unterschied = Math.Abs(Zahlen[indexdesgrössten] - RandomZahl);
+            int unterschied = Math.Abs(Zahlen[index] - RandomZahl);
+
             for(int i = 0; i < Zahlen.Count;i++)
             {
                 if (Math.Abs(Zahlen[i] - RandomZahl) < unterschied)
