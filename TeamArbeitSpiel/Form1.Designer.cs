@@ -46,7 +46,7 @@ namespace TeamArbeitSpiel
             this.lblAnzSpieler.AutoSize = true;
             this.lblAnzSpieler.Location = new System.Drawing.Point(90, 111);
             this.lblAnzSpieler.Name = "lblAnzSpieler";
-            this.lblAnzSpieler.Size = new System.Drawing.Size(208, 32);
+            this.lblAnzSpieler.Size = new System.Drawing.Size(207, 32);
             this.lblAnzSpieler.TabIndex = 1;
             this.lblAnzSpieler.Text = "Anzahl Spieler:";
             // 
@@ -70,7 +70,6 @@ namespace TeamArbeitSpiel
             this.Controls.Add(this.txbAnzSpieler);
             this.Name = "Form1";
             this.Text = "Form1";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 

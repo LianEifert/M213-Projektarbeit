@@ -184,13 +184,10 @@ namespace TeamArbeitSpiel
             
 
         }
+        PictureBox p = new PictureBox();
+
         private void BeginneAuswertung(int index)
         {
-
-
-
-
-
             int unterschied = Math.Abs(Zahlen[index] - RandomZahl);
 
             for(int i = 0; i < Zahlen.Count;i++)
@@ -201,6 +198,7 @@ namespace TeamArbeitSpiel
                     Close();
                 }
                 else
+                   
                     MessageBox.Show("Gewonnen");
                 Close();
             }
