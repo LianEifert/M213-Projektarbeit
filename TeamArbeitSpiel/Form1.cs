@@ -91,6 +91,7 @@ namespace TeamArbeitSpiel
 
         }
         List<int> votes = new List<int>();
+        List<int> ints = new List<int>();
         int votedPlayers = 0;
         int votep1;
         int votep2;
@@ -101,46 +102,19 @@ namespace TeamArbeitSpiel
         int votep7;
         int votep8;
         int votep9;
+
+        
         private void Vote_CLick(object sender, EventArgs e)
         {
+            
             Button Vote_click = (Button)sender;
             votedPlayers++;
-           
-            if(Vote_click.Text == "Wähle Spieler 1")
+           for(int i = 0; i < votes.Count; i++)
             {
-                votep1++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 2")
-            {
-                votep2++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 3")
-            {
-                votep3++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 4")
-            {
-                votep4++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 5")
-            {
-                votep5++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 6")
-            {
-                votep6++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 7")
-            {
-                votep7++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 8")
-            {
-                votep8++;
-            }
-            if (Vote_click.Text == "Wähle Spieler 9")
-            {
-                votep9++;
+                if (Vote_click.Text == "Wähle Spieler "+(i+1))
+                {
+                    ints[i]++;
+                }
             }
 
             if (votedPlayers == AnzSpieler)
@@ -226,5 +200,17 @@ namespace TeamArbeitSpiel
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ints.Add(votep1);
+            ints.Add(votep2);
+            ints.Add(votep3);
+            ints.Add(votep4);
+            ints.Add(votep5);
+            ints.Add(votep6);
+            ints.Add(votep7);
+            ints.Add(votep8);
+            ints.Add(votep9);
+        }
     }
 }
