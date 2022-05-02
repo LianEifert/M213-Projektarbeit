@@ -31,7 +31,8 @@ namespace TeamArbeitSpiel
             Random Rand = new Random();
             RandomZahl = Rand.Next(1, 100);
 
-            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+
+                AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
 
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
@@ -93,6 +94,7 @@ namespace TeamArbeitSpiel
         List<int> votes = new List<int>();
         List<int> ints = new List<int>();
         int votedPlayers = 0;
+        int votep;
         int votep1;
         int votep2;
         int votep3;
@@ -109,6 +111,7 @@ namespace TeamArbeitSpiel
             
             Button Vote_click = (Button)sender;
             votedPlayers++;
+
            for(int i = 0; i < votes.Count; i++)
             {
                 if (Vote_click.Text == "Wähle Spieler "+(i+1))
