@@ -6,4 +6,5 @@ Sie entwickeln in Ihrer Gruppe ein Spiel oder eine Spielidee, welche gezielt aus
 Zusätzlich erstellen Sie nach der Abgabe der schriftlichen Arbeit eine Präsentation und stellen Ihre Ergebnisse dem Rest der Klasse vor.
 
 ## Details:
-### Gruppen:    Die Arbeit wird in 3er oder 4er Gruppen durchgeführt.
+#### Gruppen:
+Die Arbeit wird in 3er oder 4er Gruppen durchgeführt.
