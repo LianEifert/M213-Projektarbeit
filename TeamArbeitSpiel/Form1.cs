@@ -122,18 +122,9 @@ namespace TeamArbeitSpiel
 
             if (votedPlayers == AnzSpieler)
             {
-                votes.Add(votep1);
-                votes.Add(votep2);
-                votes.Add(votep3);
-                votes.Add(votep4);
-                votes.Add(votep5);
-                votes.Add(votep6);
-                votes.Add(votep7);
-                votes.Add(votep8);
-                votes.Add(votep9);
-                int gevotetindex =  votes.IndexOf(votes.Max());
-
-                BeginneAuswertung(gevotetindex);
+                Voting vote = new Voting();
+                vote.votes = ints;
+                BeginneAuswertung(vote.VoteSystem());
             }
         }
         private void Voting()
@@ -142,6 +133,7 @@ namespace TeamArbeitSpiel
            
             for (int i = 0; i < AnzSpieler;i++)
             {
+
                 Label Spieler = new Label();
                 Spieler.Text = "Spieler: " + (i + 1);
                 Spieler.Left = left;
