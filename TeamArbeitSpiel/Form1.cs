@@ -91,7 +91,6 @@ namespace TeamArbeitSpiel
 
 
         }
-        List<int> votes = new List<int>();
         List<int> ints = new List<int>();
         int votedPlayers = 0;
         int votep;
@@ -112,7 +111,7 @@ namespace TeamArbeitSpiel
             Button Vote_click = (Button)sender;
             votedPlayers++;
 
-           for(int i = 0; i < votes.Count; i++)
+           for(int i = 0; i < ints.Count; i++)
             {
                 if (Vote_click.Text == "Wähle Spieler "+(i+1))
                 {
