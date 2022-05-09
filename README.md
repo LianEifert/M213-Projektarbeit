@@ -20,13 +20,17 @@ Die Note für die Abschlussarbeit setzt sich aus der Bewertung des schriftliche
 Für die Abschlussarbeit stehen Ihnen die Doppellektionen während dem Unterricht zur Verfügung.
 Sämtliche Abgaben, dazu zählen die beiden Meilensteine, die Schlussabgabe und die Abgabe der Präsentation, geschehen über Teams.
 
-###Kickoff:
+#### Kickoff:
 Semesterwoche 8 (Woche vom 4. April)
-Meilenstein 1:
+
+#### Meilenstein 1:
 Semesterwoche 9 (Abgabe bis am 15. April)
-Meilenstein 2:
+
+#### Meilenstein 2:
 Semesterwoche 12 (Abgabe bis am 20. Mai)
-Abgabe der schriftlichen Dokumentation:
+
+#### Abgabe der schriftlichen Dokumentation:
 Semesterwoche 14 (Abgabe bis am 3. Juni)
-Präsentation:
+
+#### Präsentation:
 Semesterwoche 16 und 17 (Woche vom 13. Juni und Woche vom 20. Juni)
