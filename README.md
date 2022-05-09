@@ -14,3 +14,19 @@ Die Dokumentation wird als Word-Datei und als PDF abgegeben. Die Präsentation w
 
 #### Bewertung:             
 Die Note für die Abschlussarbeit setzt sich aus der Bewertung des schriftlichen Teils und                             der Bewertung der Präsentation zu gleichen Stücken zusammen. Die Note der Abschlussarbeit                             macht 50% der Modulnote aus.
+
+
+## Zeitplan:
+Für die Abschlussarbeit stehen Ihnen die Doppellektionen während dem Unterricht zur Verfügung.
+Sämtliche Abgaben, dazu zählen die beiden Meilensteine, die Schlussabgabe und die Abgabe der Präsentation, geschehen über Teams.
+
+###Kickoff:
+Semesterwoche 8 (Woche vom 4. April)
+Meilenstein 1:
+Semesterwoche 9 (Abgabe bis am 15. April)
+Meilenstein 2:
+Semesterwoche 12 (Abgabe bis am 20. Mai)
+Abgabe der schriftlichen Dokumentation:
+Semesterwoche 14 (Abgabe bis am 3. Juni)
+Präsentation:
+Semesterwoche 16 und 17 (Woche vom 13. Juni und Woche vom 20. Juni)
