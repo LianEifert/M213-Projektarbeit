@@ -25,14 +25,16 @@ namespace TeamArbeitSpiel
        
         int AnzSpieler;
 
+        RandomNumber random = new RandomNumber();
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            Random Rand = new Random();
-            RandomZahl = Rand.Next(1, 100);
 
 
-                AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+            RandomZahl = random.RandomZahl();
+
+
+            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
 
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
@@ -51,7 +53,7 @@ namespace TeamArbeitSpiel
 
             for(int i = 0;i < AnzSpieler;i++)
             {
-                int RandomZahl2 = Rand.Next(1, 100);
+                int RandomZahl2 = random.RandomZahl();
 
                 Zahlen.Add(RandomZahl2);
 
@@ -185,10 +187,9 @@ namespace TeamArbeitSpiel
                 }
                 if (DialogResult.OK == MessageBox.Show("Der nächste Spieler ist dran","Drücken für nächste Zahl", MessageBoxButtons.OK, MessageBoxIcon.Information))
                 {
-
+                    
                 }
                 Spieler++;
-
             }
 
 
