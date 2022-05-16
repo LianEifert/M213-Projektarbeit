@@ -41,5 +41,5 @@ Semesterwoche 16 und 17 (Woche vom 13. Juni und Woche vom 20. Juni)
 /
 
  ## 📝 License
-Project is [MIT licensed](./LICENSE)
+Project is [MIT licensed](./LICENSE.md)
 
