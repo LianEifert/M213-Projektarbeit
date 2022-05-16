@@ -34,3 +34,12 @@ Semesterwoche 14 (Abgabe bis am 3. Juni)
 
 #### Präsentation:
 Semesterwoche 16 und 17 (Woche vom 13. Juni und Woche vom 20. Juni)
+
+## 🖥️ Installationsanleitung
+/
+/
+/
+
+ ## 📝 License
+Project is [MIT licensed](./LICENSE)
+
