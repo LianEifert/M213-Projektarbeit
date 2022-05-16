@@ -12,7 +12,7 @@ namespace TeamArbeitSpiel
 {
     public partial class Form1 : Form
     {
-        List<int> Spielerzahlen = new List<int>();
+        List<int> spielerZahlen = new List<int>();
         List<int> Zahlen = new List<int>();
 
         int RandomZahl;
@@ -24,6 +24,7 @@ namespace TeamArbeitSpiel
 
        
         int AnzSpieler;
+        int[] spielerVotes;
 
         RandomNumber random = new RandomNumber();
 
@@ -34,7 +35,8 @@ namespace TeamArbeitSpiel
             RandomZahl = random.RandomZahl();
 
 
-            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+                AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+            spielerVotes = new int[AnzSpieler];
 
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
@@ -83,9 +85,9 @@ namespace TeamArbeitSpiel
             
             TextBox temp = (TextBox)sender;
 
-                Spielerzahlen.Add(Convert.ToInt32(temp.Text));
+                spielerZahlen.Add(Convert.ToInt32(temp.Text));
             
-            if (Spielerzahlen.Count == Convert.ToInt32(txbAnzSpieler.Text))
+            if (spielerZahlen.Count == Convert.ToInt32(txbAnzSpieler.Text))
             {
                 Voting();
 
@@ -95,16 +97,17 @@ namespace TeamArbeitSpiel
         }
         List<int> ints = new List<int>();
         int votedPlayers = 0;
-        int votep;
-        int votep1;
-        int votep2;
-        int votep3;
-        int votep4;
-        int votep5;
-        int votep6;
-        int votep7;
-        int votep8;
-        int votep9;
+       
+        //int votep;
+        //int votep1;
+        //int votep2;
+        //int votep3;
+        //int votep4;
+        //int votep5;
+        //int votep6;
+        //int votep7;
+        //int votep8;
+        //int votep9;
 
         
         private void Vote_CLick(object sender, EventArgs e)
@@ -113,18 +116,18 @@ namespace TeamArbeitSpiel
             Button Vote_click = (Button)sender;
             votedPlayers++;
 
-           for(int i = 0; i < ints.Count; i++)
+           for(int i = 0; i < spielerVotes.Length; i++)
             {
                 if (Vote_click.Text == "Wähle Spieler "+(i+1))
                 {
-                    ints[i]++;
+                    spielerVotes[i]++;
                 }
             }
 
             if (votedPlayers == AnzSpieler)
             {
                 Voting vote = new Voting();
-                vote.votes = ints;
+                vote.votes = spielerVotes;
                 BeginneAuswertung(vote.VoteSystem());
             }
         }
@@ -197,15 +200,15 @@ namespace TeamArbeitSpiel
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ints.Add(votep1);
-            ints.Add(votep2);
-            ints.Add(votep3);
-            ints.Add(votep4);
-            ints.Add(votep5);
-            ints.Add(votep6);
-            ints.Add(votep7);
-            ints.Add(votep8);
-            ints.Add(votep9);
+            //ints.Add(votep1);
+            //ints.Add(votep2);
+            //ints.Add(votep3);
+            //ints.Add(votep4);
+            //ints.Add(votep5);
+            //ints.Add(votep6);
+            //ints.Add(votep7);
+            //ints.Add(votep8);
+            //ints.Add(votep9);
         }
     }
 }

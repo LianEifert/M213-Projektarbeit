@@ -8,12 +8,16 @@ namespace TeamArbeitSpiel
 {
     public class Voting
     {
-        public List<int> votes { get; set; }
+        //public List<int> votes { get; set; }
+        public int[] votes { get; set; }
 
-        public int VoteSystem()
+  public int VoteSystem()
         {
-            return votes.IndexOf(votes.Max());
-        }
+      //return votes.IndexOf(votes.Max());
+        int maxValue = votes.Max();
+        int maxIndex = votes.ToList().IndexOf(maxValue);
+        return maxIndex;
+    }
 
 
 
