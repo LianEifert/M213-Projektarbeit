@@ -85,8 +85,19 @@
   <ItemGroup>
     <None Include="Resources\Download.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pictures\" />
+    <Content Include="Pictures\Action by kusodesign on DeviantArt.png" />
+    <Content Include="Pictures\Vitskärshällan.png" />
+    <None Include="Resources\output-onlinepngtools_50_1_40.png" />
+    <None Include="Resources\output-onlinepngtools_50_1_301.png" />
+    <None Include="Resources\output-onlinepngtools_50_1_30.png" />
+    <None Include="Resources\output-onlinepngtools_50.png" />
+    <None Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\Vitskärshällan %281%29.png" />
+    <None Include="Resources\Vitskärshällan.png" />
+    <None Include="Resources\Webp.net-resizeimage %283%29.png" />
+    <None Include="Resources\Webp.net-resizeimage %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

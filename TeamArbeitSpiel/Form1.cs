@@ -27,25 +27,50 @@ namespace TeamArbeitSpiel
 
 
         private void btnPlay_Click(object sender, EventArgs e)
-        {
+        {            
             Random Rand = new Random();
             RandomZahl = Rand.Next(1, 100);
+            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
 
-
-                AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
-
+            picBoxArrowLeft.Visible = false;
+            picBoxArrowRight.Visible = false;
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
-            lblAnzSpieler.Text = "Jeder Spieler gibt die Zahl von 1 bis 10 ein. Die Zahl ist: " + RandomZahl;
 
-            Button Zahlanschauen = new Button();
-            Zahlanschauen.Text = "Drücken um die Zahl des ersten Spielers zu sehen";
-            Zahlanschauen.Top = 100;
-            Zahlanschauen.Left = 100;
-            Zahlanschauen.Width = 280;
-            Zahlanschauen.Click += Zahlenanschauen_Click;
-            this.Controls.Add(Zahlanschauen);
+            lblAnzSpieler.Text = "Jetzt müssen sie sich gegenseitig Vetrauen. Was denken sie, wue nahe sind sie an diese Zahl?\n Geben sie eine Zahl von Scala 1-10 in ihrem zugehörigen Feld an! ";
+            lblAnzSpieler.Font = new Font("Microsoft Sans Serif", 12);
+            lblAnzSpieler.Left = 75;
+            lblAnzSpieler.Top = 110;
 
+            Label lblZahl = new Label();
+            lblZahl.Text = "Zahl";
+            lblZahl.Font = new Font("Microsoft Sans Serif", 24);
+            lblZahl.Height = 30;
+            lblZahl.Top = 20;
+            lblZahl.Left = 375;
+            lblZahl.BackColor = Color.Transparent;
+            this.Controls.Add(lblZahl);
+
+
+            Label lblRandomZahl = new Label();
+            lblRandomZahl.Text = RandomZahl.ToString();
+            lblRandomZahl.Font = new Font("Microsoft Sans Serif", 24);
+            lblRandomZahl.Height=30;
+            lblRandomZahl.Top = 65;
+            lblRandomZahl.Left = 390;
+            lblRandomZahl.BackColor = Color.Transparent;
+            this.Controls.Add(lblRandomZahl);
+
+
+
+            //Button Zahlanschauen = new Button();
+            //Zahlanschauen.Text = "Drücken um die Zahl des ersten Spielers zu sehen";
+            //Zahlanschauen.Top = 100;
+            //Zahlanschauen.Left = 100;
+            //Zahlanschauen.Width = 280;
+            //Zahlanschauen.Click += Zahlenanschauen_Click;
+            //this.Controls.Add(Zahlanschauen);
+            
             int zähler = 1;
             int LblTop = 200;
 
@@ -55,17 +80,17 @@ namespace TeamArbeitSpiel
 
                 Zahlen.Add(RandomZahl2);
 
-                Label Text = new Label();
-                Text.Text = "Spieler " + zähler;
-                Text.Left = 100;
-                Text.Top = LblTop;
-                this.Controls.Add(Text);
+                //Label Text = new Label();
+                //Text.Text = "Spieler " + zähler;
+                //Text.Left = 100;
+                //Text.Top = LblTop;
+                //this.Controls.Add(Text);
                 
-                TextBox Zahl = new TextBox();
-                Zahl.Left = 200;
-                Zahl.Top = LblTop;
-                this.Controls.Add(Zahl);
-                Zahl.TextChanged += Textgeändert;
+                //TextBox Zahl = new TextBox();
+                //Zahl.Left = 200;
+                //Zahl.Top = LblTop;
+                //this.Controls.Add(Zahl);
+                //Zahl.TextChanged += Textgeändert;
 
                 LblTop = LblTop + 40;
                 zähler++;
@@ -205,6 +230,11 @@ namespace TeamArbeitSpiel
             ints.Add(votep7);
             ints.Add(votep8);
             ints.Add(votep9);
+            picBoxArrowLeft.BackColor = Color.Transparent;
+            picBoxArrowRight.BackColor = Color.Transparent;
+            lblAnzSpieler.BackColor = Color.Transparent;
+            
+
         }
     }
 }
