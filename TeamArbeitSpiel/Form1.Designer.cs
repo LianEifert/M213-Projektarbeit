@@ -64,7 +64,7 @@ namespace TeamArbeitSpiel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 747);
+            this.ClientSize = new System.Drawing.Size(1119, 803);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.lblAnzSpieler);
             this.Controls.Add(this.txbAnzSpieler);
