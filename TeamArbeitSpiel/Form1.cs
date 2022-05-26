@@ -39,7 +39,7 @@ namespace TeamArbeitSpiel
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
 
-            lblAnzSpieler.Text = "Jetzt müssen sie sich gegenseitig Vetrauen. Was denken sie, wue nahe sind sie an diese Zahl?\n Geben sie eine Zahl von Scala 1-10 in ihrem zugehörigen Feld an! ";
+            lblAnzSpieler.Text = "Jetzt müssen sie sich gegenseitig Vetrauen. Was denken sie, wie nahe sind sie an diese Zahl?\n Geben sie eine Zahl von Scala 1-10 in ihrem zugehörigen Feld an! ";
             lblAnzSpieler.Font = new Font("Microsoft Sans Serif", 12);
             lblAnzSpieler.Left = 75;
             lblAnzSpieler.Top = 120;
