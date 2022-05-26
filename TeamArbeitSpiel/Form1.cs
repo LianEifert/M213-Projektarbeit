@@ -32,7 +32,7 @@ namespace TeamArbeitSpiel
         {
 
 
-            RandomZahl = random.RandomZahl();
+            RandomZahl = random.RandomZahl(Zahlen);
 
       try
       {
@@ -64,7 +64,7 @@ namespace TeamArbeitSpiel
 
             for(int i = 0;i < AnzSpieler;i++)
             {
-                int RandomZahl2 = random.RandomZahl();
+                int RandomZahl2 = random.RandomZahl(Zahlen);
 
                 Zahlen.Add(RandomZahl2);
 
@@ -92,7 +92,8 @@ namespace TeamArbeitSpiel
         private void Textgeändert(object sender, EventArgs e)
         {
             
-            TextBox temp = (TextBox)sender;
+            TextBox temp = (TextBox)sender; 
+           // if((temp != null) && (temp.Text.))
 
                 spielerZahlen.Add(Convert.ToInt32(temp.Text));
             
@@ -120,7 +121,7 @@ namespace TeamArbeitSpiel
                 }
                 if(Convert.ToString(Vote_Labels[i].Tag) == "Spieler"+(i+1))
                 {
-                    Vote_Labels[i].Text = Convert.ToString(spielerVotes[i]);
+                    Vote_Labels[i].Text = "Votes: "+Convert.ToString(spielerVotes[i]);
                 }
             }
 
@@ -147,7 +148,7 @@ namespace TeamArbeitSpiel
 
                 Label Votes = new Label();
                 Votes.Tag = "Spieler" + (i + 1);
-                Votes.Text = "0";
+                Votes.Text = "Votes: 0";
                 Votes.Left = left;
                 Votes.Top = 320;
                 Vote_Labels.Add(Votes);
@@ -208,5 +209,6 @@ namespace TeamArbeitSpiel
 
 
         }
-    }
+
+  }
 }

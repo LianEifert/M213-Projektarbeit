@@ -37,7 +37,7 @@ namespace TeamArbeitSpiel
       // txbAnzSpieler
       // 
       this.txbAnzSpieler.Location = new System.Drawing.Point(152, 57);
-      this.txbAnzSpieler.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.txbAnzSpieler.Margin = new System.Windows.Forms.Padding(2);
       this.txbAnzSpieler.Name = "txbAnzSpieler";
       this.txbAnzSpieler.Size = new System.Drawing.Size(95, 22);
       this.txbAnzSpieler.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace TeamArbeitSpiel
       // btnPlay
       // 
       this.btnPlay.Location = new System.Drawing.Point(48, 111);
-      this.btnPlay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.btnPlay.Margin = new System.Windows.Forms.Padding(2);
       this.btnPlay.Name = "btnPlay";
       this.btnPlay.Size = new System.Drawing.Size(289, 147);
       this.btnPlay.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace TeamArbeitSpiel
       this.Controls.Add(this.btnPlay);
       this.Controls.Add(this.lblAnzSpieler);
       this.Controls.Add(this.txbAnzSpieler);
-      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.Margin = new System.Windows.Forms.Padding(2);
       this.Name = "Form1";
       this.Text = "Form1";
       this.ResumeLayout(false);
