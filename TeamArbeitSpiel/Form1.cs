@@ -34,8 +34,17 @@ namespace TeamArbeitSpiel
 
             RandomZahl = random.RandomZahl();
 
+      try
+      {
+        AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+      }
+      catch (Exception AnzSPNull)
+      {
 
-                AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+        MessageBox.Show("Sie Müssen eine Zahl eingeben.\nDefault 3 Spieler Initialisiert");
+        AnzSpieler = 3;
+      }
+           
             spielerVotes = new int[AnzSpieler];
 
             btnPlay.Visible = false;
@@ -87,7 +96,7 @@ namespace TeamArbeitSpiel
 
                 spielerZahlen.Add(Convert.ToInt32(temp.Text));
             
-            if (spielerZahlen.Count == Convert.ToInt32(txbAnzSpieler.Text))
+            if (spielerZahlen.Count == AnzSpieler)
             {
                 Voting();
 
@@ -95,20 +104,7 @@ namespace TeamArbeitSpiel
 
 
         }
-        List<int> ints = new List<int>();
         int votedPlayers = 0;
-       
-        //int votep;
-        //int votep1;
-        //int votep2;
-        //int votep3;
-        //int votep4;
-        //int votep5;
-        //int votep6;
-        //int votep7;
-        //int votep8;
-        //int votep9;
-
         
         private void Vote_CLick(object sender, EventArgs e)
         {
@@ -196,19 +192,6 @@ namespace TeamArbeitSpiel
             }
 
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //ints.Add(votep1);
-            //ints.Add(votep2);
-            //ints.Add(votep3);
-            //ints.Add(votep4);
-            //ints.Add(votep5);
-            //ints.Add(votep6);
-            //ints.Add(votep7);
-            //ints.Add(votep8);
-            //ints.Add(votep9);
         }
     }
 }
