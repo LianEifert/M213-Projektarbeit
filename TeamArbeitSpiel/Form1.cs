@@ -24,7 +24,9 @@ namespace TeamArbeitSpiel
 
        
         int AnzSpieler;
-
+        Button Zahlanschauen = new Button();
+        Label lblZahl = new Label();
+        Label lblRandomZahl = new Label();
 
         private void btnPlay_Click(object sender, EventArgs e)
         {            
@@ -40,59 +42,63 @@ namespace TeamArbeitSpiel
             lblAnzSpieler.Text = "Jetzt müssen sie sich gegenseitig Vetrauen. Was denken sie, wue nahe sind sie an diese Zahl?\n Geben sie eine Zahl von Scala 1-10 in ihrem zugehörigen Feld an! ";
             lblAnzSpieler.Font = new Font("Microsoft Sans Serif", 12);
             lblAnzSpieler.Left = 75;
-            lblAnzSpieler.Top = 110;
+            lblAnzSpieler.Top = 120;
+            lblAnzSpieler.TextAlign = ContentAlignment.MiddleCenter;
 
-            Label lblZahl = new Label();
+            
             lblZahl.Text = "Zahl";
             lblZahl.Font = new Font("Microsoft Sans Serif", 24);
             lblZahl.Height = 30;
             lblZahl.Top = 20;
-            lblZahl.Left = 375;
+            lblZahl.Left = 370;
             lblZahl.BackColor = Color.Transparent;
             this.Controls.Add(lblZahl);
 
 
-            Label lblRandomZahl = new Label();
+           
             lblRandomZahl.Text = RandomZahl.ToString();
             lblRandomZahl.Font = new Font("Microsoft Sans Serif", 24);
             lblRandomZahl.Height=30;
             lblRandomZahl.Top = 65;
-            lblRandomZahl.Left = 390;
+            lblRandomZahl.Left = 385;
             lblRandomZahl.BackColor = Color.Transparent;
             this.Controls.Add(lblRandomZahl);
 
 
 
-            //Button Zahlanschauen = new Button();
-            //Zahlanschauen.Text = "Drücken um die Zahl des ersten Spielers zu sehen";
-            //Zahlanschauen.Top = 100;
-            //Zahlanschauen.Left = 100;
-            //Zahlanschauen.Width = 280;
-            //Zahlanschauen.Click += Zahlenanschauen_Click;
-            //this.Controls.Add(Zahlanschauen);
             
+            Zahlanschauen.Font = new Font("Microsoft Sans Serif", 12);
+            Zahlanschauen.Text = "Zahlen verteilen";
+            Zahlanschauen.Top = 180;
+            Zahlanschauen.Left = 275;
+            Zahlanschauen.Width = 280;
+            Zahlanschauen.Height = 50;
+            Zahlanschauen.Click += Zahlenanschauen_Click;
+            this.Controls.Add(Zahlanschauen);
+
             int zähler = 1;
-            int LblTop = 200;
+            int LblTop = 250;
 
             for(int i = 0;i < AnzSpieler;i++)
             {
                 int RandomZahl2 = Rand.Next(1, 100);
 
                 Zahlen.Add(RandomZahl2);
-
-                //Label Text = new Label();
-                //Text.Text = "Spieler " + zähler;
-                //Text.Left = 100;
-                //Text.Top = LblTop;
-                //this.Controls.Add(Text);
+                Label Text = new Label();
+                Text.Text = "Spieler " + zähler;
+                Text.BackColor = Color.Transparent;
+                Text.Font = new Font("Microsoft Sans Serif", 11);
+                Text.Left = 100;
+                Text.Top = LblTop;
+                this.Controls.Add(Text);
                 
-                //TextBox Zahl = new TextBox();
-                //Zahl.Left = 200;
-                //Zahl.Top = LblTop;
-                //this.Controls.Add(Zahl);
-                //Zahl.TextChanged += Textgeändert;
+                TextBox Zahl = new TextBox();
+                Zahl.Left = 200;
+                Zahl.Top = LblTop;
+                this.Controls.Add(Zahl);
+                Zahl.TextChanged += Textgeändert;
 
-                LblTop = LblTop + 40;
+                LblTop = LblTop + 30;
                 zähler++;
 
 
@@ -112,9 +118,14 @@ namespace TeamArbeitSpiel
             {
                 Voting();
 
+                Zahlanschauen.Visible = false;
+                lblAnzSpieler.Text = "Nachdem 1 Minute vorbei ist, müssen sie ein finales Entscheid treffen und einen Spieler auswählen. \nJetzt kann gar nicht kommuniziert werden und ihr müsst euch gegenseitig vertrauen!";
+                lblAnzSpieler.TextAlign = ContentAlignment.MiddleCenter;
+                lblAnzSpieler.Left = 60;
+                
+                
             }
-
-
+            
         }
         List<int> ints = new List<int>();
         int votedPlayers = 0;
@@ -153,25 +164,30 @@ namespace TeamArbeitSpiel
         }
         private void Voting()
         {
-            int left = 400;
-           
+            int left = 500;
+            int counter = 1;
+            int top = 250;
+            
             for (int i = 0; i < AnzSpieler;i++)
             {
 
                 Label Spieler = new Label();
-                Spieler.Text = "Spieler: " + (i + 1);
+                Spieler.Text = "Spieler " + (i + 1);
                 Spieler.Left = left;
-                Spieler.Top = 300;
+                Spieler.Font = new Font("Microsoft Sans Serif", 11);
+                Spieler.BackColor = Color.Transparent;
+                Spieler.Top = top;
                 this.Controls.Add(Spieler);
 
                 Button Vote = new Button();
-                Vote.Text = "Wähle Spieler " + (i + 1);
-                Vote.Left = left;
-                Vote.Top = 340;
+                Vote.Text = (i + 1) + ". Spieler wählen";
+                Vote.Width = 100;
+                Vote.Left = left + 100;
+                Vote.Top = top;
                 this.Controls.Add(Vote);
-                left = left + 110;
+                top = top + 30;
                 Vote.Click += Vote_CLick;
-
+                counter++;
             }
 
             

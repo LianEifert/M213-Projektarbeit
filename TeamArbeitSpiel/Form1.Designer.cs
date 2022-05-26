@@ -29,6 +29,7 @@ namespace TeamArbeitSpiel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txbAnzSpieler = new System.Windows.Forms.TextBox();
             this.lblAnzSpieler = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace TeamArbeitSpiel
             this.txbAnzSpieler.Name = "txbAnzSpieler";
             this.txbAnzSpieler.Size = new System.Drawing.Size(72, 20);
             this.txbAnzSpieler.TabIndex = 0;
-            this.txbAnzSpieler.Text = "3-9";
+            this.txbAnzSpieler.Text = "3-8";
             this.txbAnzSpieler.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblAnzSpieler
@@ -104,6 +105,7 @@ namespace TeamArbeitSpiel
             this.Controls.Add(this.lblAnzSpieler);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.txbAnzSpieler);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
