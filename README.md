@@ -1,5 +1,5 @@
 # M213-Projektarbeit
-Abschlussproject of M213 with Simon H. | Tim B. | Hao W. | Lian E.
+Final project of M213 with Simon H. | Tim B. | Hao W. | Lian E.
 
 ## 📜 Task
 In your group, you develop a game or a game idea that is intended to promote selected competences and create the corresponding documentation. You can define the competences yourself or select them from the catalogue of competences. At least two competences must be pursued.
