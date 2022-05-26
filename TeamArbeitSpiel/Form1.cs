@@ -118,6 +118,10 @@ namespace TeamArbeitSpiel
                 {
                     spielerVotes[i]++;
                 }
+                if(Convert.ToString(Vote_Labels[i].Tag) == "Spieler"+(i+1))
+                {
+                    Vote_Labels[i].Text = Convert.ToString(spielerVotes[i]);
+                }
             }
 
             if (votedPlayers == AnzSpieler)
@@ -127,6 +131,7 @@ namespace TeamArbeitSpiel
                 BeginneAuswertung(vote.VoteSystem());
             }
         }
+        List<Label> Vote_Labels = new List<Label>();
         private void Voting()
         {
             int left = 400;
@@ -140,10 +145,20 @@ namespace TeamArbeitSpiel
                 Spieler.Top = 300;
                 this.Controls.Add(Spieler);
 
+                Label Votes = new Label();
+                Votes.Tag = "Spieler" + (i + 1);
+                Votes.Text = "0";
+                Votes.Left = left;
+                Votes.Top = 320;
+                Vote_Labels.Add(Votes);
+                this.Controls.Add(Votes);
+
+                
+
                 Button Vote = new Button();
                 Vote.Text = "Wähle Spieler " + (i + 1);
                 Vote.Left = left;
-                Vote.Top = 340;
+                Vote.Top = 350;
                 this.Controls.Add(Vote);
                 left = left + 110;
                 Vote.Click += Vote_CLick;
