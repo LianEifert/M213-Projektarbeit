@@ -15,6 +15,7 @@ namespace TeamArbeitSpiel
         List<int> spielerZahlen = new List<int>();
         List<int> Zahlen = new List<int>();
 
+
         int RandomZahl;
 
         public Form1()
@@ -34,16 +35,19 @@ namespace TeamArbeitSpiel
 
             RandomZahl = random.RandomZahl(Zahlen);
 
-      try
-      {
-        AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
-      }
-      catch (Exception AnzSPNull)
-      {
-
-        MessageBox.Show("Sie Müssen eine Zahl eingeben.\nDefault 3 Spieler Initialisiert");
-        AnzSpieler = 3;
-      }
+        try
+        {
+            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+            if (AnzSpieler > 9 || AnzSpieler < 3)
+            {
+                    MessageBox.Show("Falsche Anzahl Spieler");
+            }
+        }
+        catch (Exception AnzSPNull)
+        {
+            MessageBox.Show("Sie Müssen eine Zahl eingeben.\nDefault 3 Spieler Initialisiert");
+            AnzSpieler = 3;
+        }
            
             spielerVotes = new int[AnzSpieler];
 
@@ -92,16 +96,32 @@ namespace TeamArbeitSpiel
         private void Textgeändert(object sender, EventArgs e)
         {
             
-            TextBox temp = (TextBox)sender; 
-           // if((temp != null) && (temp.Text.))
+            TextBox temp = (TextBox)sender;
+            temp.ReadOnly = true;
 
+            try
+            {
                 spielerZahlen.Add(Convert.ToInt32(temp.Text));
+            }
             
+            catch (FormatException)
+            {
+                if(temp.Text != "")
+                {
+                    MessageBox.Show("Not a Number");
+                }
+                temp.Text = "";
+                temp.ReadOnly = false;
+
+            }
+
+
             if (spielerZahlen.Count == AnzSpieler)
             {
                 Voting();
 
             }
+
 
 
         }
@@ -173,42 +193,53 @@ namespace TeamArbeitSpiel
 
         private void BeginneAuswertung(int index)
         {
-            int unterschied = Math.Abs(Zahlen[index] - RandomZahl);
+
+            int unterschied = Zahlen[index] - RandomZahl;
 
             for(int i = 0; i < Zahlen.Count;i++)
             {
-                if (Math.Abs(Zahlen[i] - RandomZahl) < unterschied)
+                if ((Zahlen[i] - RandomZahl) < unterschied)
                 {
                     MessageBox.Show("Verloren");
                     Close();
                 }
                 else
-                   
+                { 
                     MessageBox.Show("Gewonnen");
-                Close();
+                    Close();
+                }   
             }
         }
         private void Zahlenanschauen_Click(object sender, EventArgs e)
         {
                 int Spieler = 1;
-
+            
             foreach (int zahl in Zahlen)
             {
                 string t = zahl.ToString();
 
+                if(Spieler == 1)
+                {
+                    MessageBox.Show("Der erste Spieler ist am Zug");
+                }
+                else if (DialogResult.OK == MessageBox.Show("Der nächste Spieler ist dran", "Drücken für nächste Zahl", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                {
+
+                }
                 if (DialogResult.OK == MessageBox.Show("Spieler "+Spieler+" hat die Zahl: "+t,"OK drücken wenn die Zahl gemerkt wurde",MessageBoxButtons.OK,MessageBoxIcon.Information))
                 {
 
                 }
-                if (DialogResult.OK == MessageBox.Show("Der nächste Spieler ist dran","Drücken für nächste Zahl", MessageBoxButtons.OK, MessageBoxIcon.Information))
-                {
-                    
-                }
+                
                 Spieler++;
             }
 
 
         }
 
-  }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

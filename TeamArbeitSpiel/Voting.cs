@@ -15,8 +15,8 @@ namespace TeamArbeitSpiel
         {
       //return votes.IndexOf(votes.Max());
         int maxValue = votes.Max();
-        int maxIndex = votes.ToList().IndexOf(maxValue);
-        return maxIndex;
+        int Index = votes.ToList().IndexOf(maxValue);
+        return Index;
     }
 
 
