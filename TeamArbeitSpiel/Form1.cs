@@ -29,11 +29,14 @@ namespace TeamArbeitSpiel
         int[] spielerVotes;
 
         RandomNumber random = new RandomNumber();
+        Button Zahlanschauen = new Button();
+        Label lblZahl = new Label();
+        Label lblRandomZahl = new Label();
+        
+        
 
         private void btnPlay_Click(object sender, EventArgs e)
-        {
-
-
+        {            
             RandomZahl = random.RandomZahl(Zahlen);
 
         try
@@ -53,16 +56,9 @@ namespace TeamArbeitSpiel
             spielerVotes = new int[AnzSpieler];
 
 
-        Button Zahlanschauen = new Button();
-        Label lblZahl = new Label();
-        Label lblRandomZahl = new Label();
-
-        private void btnPlay_Click(object sender, EventArgs e)
-        {            
+        
             Random Rand = new Random();
             RandomZahl = Rand.Next(1, 100);
-            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
-
             picBoxArrowLeft.Visible = false;
             picBoxArrowRight.Visible = false;
 
@@ -74,6 +70,7 @@ namespace TeamArbeitSpiel
             lblAnzSpieler.Left = 75;
             lblAnzSpieler.Top = 120;
             lblAnzSpieler.TextAlign = ContentAlignment.MiddleCenter;
+
 
             
             lblZahl.Text = "Zahl";
@@ -164,7 +161,7 @@ namespace TeamArbeitSpiel
             {
                 Voting();
 
-                Zahlanschauen.Visible = false;
+                //Zahlanschauen.Visible = false;
                 lblAnzSpieler.Text = "Nachdem 1 Minute vorbei ist, müssen sie ein finales Entscheid treffen und einen Spieler auswählen. \nJetzt kann gar nicht kommuniziert werden und ihr müsst euch gegenseitig vertrauen!";
                 lblAnzSpieler.TextAlign = ContentAlignment.MiddleCenter;
                 lblAnzSpieler.Left = 60;
@@ -297,6 +294,13 @@ namespace TeamArbeitSpiel
                 Spieler++;
             }
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            picBoxArrowLeft.BackColor = Color.Transparent;
+            picBoxArrowRight.BackColor = Color.Transparent;
+            lblAnzSpieler.BackColor = Color.Transparent;
         }
     }
 }

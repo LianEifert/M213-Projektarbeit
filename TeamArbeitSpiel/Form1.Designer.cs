@@ -56,7 +56,6 @@ namespace TeamArbeitSpiel
             this.lblAnzSpieler.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnzSpieler.Location = new System.Drawing.Point(269, 109);
             this.lblAnzSpieler.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-
             this.lblAnzSpieler.Name = "lblAnzSpieler";
             this.lblAnzSpieler.Size = new System.Drawing.Size(277, 25);
             this.lblAnzSpieler.TabIndex = 1;
