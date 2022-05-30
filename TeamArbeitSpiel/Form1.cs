@@ -12,8 +12,9 @@ namespace TeamArbeitSpiel
 {
     public partial class Form1 : Form
     {
-        List<int> Spielerzahlen = new List<int>();
+        List<int> spielerZahlen = new List<int>();
         List<int> Zahlen = new List<int>();
+
 
         int RandomZahl;
 
@@ -24,6 +25,34 @@ namespace TeamArbeitSpiel
 
        
         int AnzSpieler;
+
+        int[] spielerVotes;
+
+        RandomNumber random = new RandomNumber();
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+
+
+            RandomZahl = random.RandomZahl(Zahlen);
+
+        try
+        {
+            AnzSpieler = Convert.ToInt32(txbAnzSpieler.Text);
+            if (AnzSpieler > 9 || AnzSpieler < 3)
+            {
+                    MessageBox.Show("Falsche Anzahl Spieler");
+            }
+        }
+        catch (Exception AnzSPNull)
+        {
+            MessageBox.Show("Sie Müssen eine Zahl eingeben.\nDefault 3 Spieler Initialisiert");
+            AnzSpieler = 3;
+        }
+           
+            spielerVotes = new int[AnzSpieler];
+
+
         Button Zahlanschauen = new Button();
         Label lblZahl = new Label();
         Label lblRandomZahl = new Label();
@@ -36,6 +65,7 @@ namespace TeamArbeitSpiel
 
             picBoxArrowLeft.Visible = false;
             picBoxArrowRight.Visible = false;
+
             btnPlay.Visible = false;
             txbAnzSpieler.Visible = false;
 
@@ -81,7 +111,7 @@ namespace TeamArbeitSpiel
 
             for(int i = 0;i < AnzSpieler;i++)
             {
-                int RandomZahl2 = Rand.Next(1, 100);
+                int RandomZahl2 = random.RandomZahl(Zahlen);
 
                 Zahlen.Add(RandomZahl2);
                 Label Text = new Label();
@@ -111,10 +141,26 @@ namespace TeamArbeitSpiel
         {
             
             TextBox temp = (TextBox)sender;
+            temp.ReadOnly = true;
 
-                Spielerzahlen.Add(Convert.ToInt32(temp.Text));
+            try
+            {
+                spielerZahlen.Add(Convert.ToInt32(temp.Text));
+            }
             
-            if (Spielerzahlen.Count == Convert.ToInt32(txbAnzSpieler.Text))
+            catch (FormatException)
+            {
+                if(temp.Text != "")
+                {
+                    MessageBox.Show("Not a Number");
+                }
+                temp.Text = "";
+                temp.ReadOnly = false;
+
+            }
+
+
+            if (spielerZahlen.Count == AnzSpieler)
             {
                 Voting();
 
@@ -125,43 +171,46 @@ namespace TeamArbeitSpiel
                 
                 
             }
-            
         }
-        List<int> ints = new List<int>();
         int votedPlayers = 0;
-        int votep;
-        int votep1;
-        int votep2;
-        int votep3;
-        int votep4;
-        int votep5;
-        int votep6;
-        int votep7;
-        int votep8;
-        int votep9;
 
-        
         private void Vote_CLick(object sender, EventArgs e)
         {
-            
+
             Button Vote_click = (Button)sender;
             votedPlayers++;
 
-           for(int i = 0; i < ints.Count; i++)
+            for (int i = 0; i < spielerVotes.Length; i++)
             {
-                if (Vote_click.Text == "Wähle Spieler "+(i+1))
+                if (Vote_click.Text == "Wähle Spieler " + (i + 1))
                 {
-                    ints[i]++;
+                    spielerVotes[i]++;
+                }
+                if (Convert.ToString(Vote_Labels[i].Tag) == "Spieler" + (i + 1))
+                {
+                    Vote_Labels[i].Text = "Votes: " + Convert.ToString(spielerVotes[i]);
                 }
             }
 
             if (votedPlayers == AnzSpieler)
             {
                 Voting vote = new Voting();
-                vote.votes = ints;
-                BeginneAuswertung(vote.VoteSystem());
+                vote.votes = spielerVotes;
+
+                if (vote.votesure())
+                {
+                    
+                    BeginneAuswertung(vote.VoteSystem());
+                }
+                else {
+
+                    MessageBox.Show("Verloren da sich das Team nicht einigen konnte");
+                    Close();
+                }
+
             }
         }
+        List<Label> Vote_Labels = new List<Label>();
         private void Voting()
         {
             int left = 500;
@@ -178,6 +227,16 @@ namespace TeamArbeitSpiel
                 Spieler.BackColor = Color.Transparent;
                 Spieler.Top = top;
                 this.Controls.Add(Spieler);
+
+                Label Votes = new Label();
+                Votes.Tag = "Spieler" + (i + 1);
+                Votes.Text = "Votes: 0";
+                Votes.Left = left;
+                Votes.Top = 320;
+                Vote_Labels.Add(Votes);
+                this.Controls.Add(Votes);
+
+                
 
                 Button Vote = new Button();
                 Vote.Text = (i + 1) + ". Spieler wählen";
@@ -197,59 +256,46 @@ namespace TeamArbeitSpiel
 
         private void BeginneAuswertung(int index)
         {
+
             int unterschied = Math.Abs(Zahlen[index] - RandomZahl);
 
             for(int i = 0; i < Zahlen.Count;i++)
             {
-                if (Math.Abs(Zahlen[i] - RandomZahl) < unterschied)
+                if (Math.Abs((Zahlen[i] - RandomZahl)) < unterschied)
                 {
                     MessageBox.Show("Verloren");
                     Close();
                 }
-                else
-                   
+                else if(Math.Abs((Zahlen[i] - RandomZahl)) > unterschied)
+                { 
                     MessageBox.Show("Gewonnen");
-                Close();
+                    Close();
+                }   
             }
         }
         private void Zahlenanschauen_Click(object sender, EventArgs e)
         {
                 int Spieler = 1;
-
+            
             foreach (int zahl in Zahlen)
             {
                 string t = zahl.ToString();
 
+                if(Spieler == 1)
+                {
+                    MessageBox.Show("Der erste Spieler ist am Zug");
+                }
+                else if (DialogResult.OK == MessageBox.Show("Der nächste Spieler ist dran", "Drücken für nächste Zahl", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                {
+
+                }
                 if (DialogResult.OK == MessageBox.Show("Spieler "+Spieler+" hat die Zahl: "+t,"OK drücken wenn die Zahl gemerkt wurde",MessageBoxButtons.OK,MessageBoxIcon.Information))
                 {
 
                 }
-                if (DialogResult.OK == MessageBox.Show("Der nächste Spieler ist dran","Drücken für nächste Zahl", MessageBoxButtons.OK, MessageBoxIcon.Information))
-                {
-
-                }
+                
                 Spieler++;
-
             }
-
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            ints.Add(votep1);
-            ints.Add(votep2);
-            ints.Add(votep3);
-            ints.Add(votep4);
-            ints.Add(votep5);
-            ints.Add(votep6);
-            ints.Add(votep7);
-            ints.Add(votep8);
-            ints.Add(votep9);
-            picBoxArrowLeft.BackColor = Color.Transparent;
-            picBoxArrowRight.BackColor = Color.Transparent;
-            lblAnzSpieler.BackColor = Color.Transparent;
-            
 
         }
     }
