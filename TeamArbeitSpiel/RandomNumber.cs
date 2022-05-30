@@ -14,10 +14,11 @@ namespace TeamArbeitSpiel
             int rand = Rnd.Next(0, 100);
       for (int i = 0; i < list.Count; i++)
       {
-      if(rand == list[i]){
-          RandomZahl(list);
-          break;
-      }
+            if(rand == list[i])
+            {
+            RandomZahl(list);
+            break;
+            }
       }
             return rand;
         }

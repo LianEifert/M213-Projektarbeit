@@ -126,22 +126,22 @@ namespace TeamArbeitSpiel
 
         }
         int votedPlayers = 0;
-        
+
         private void Vote_CLick(object sender, EventArgs e)
         {
-            
+
             Button Vote_click = (Button)sender;
             votedPlayers++;
 
-           for(int i = 0; i < spielerVotes.Length; i++)
+            for (int i = 0; i < spielerVotes.Length; i++)
             {
-                if (Vote_click.Text == "Wähle Spieler "+(i+1))
+                if (Vote_click.Text == "Wähle Spieler " + (i + 1))
                 {
                     spielerVotes[i]++;
                 }
-                if(Convert.ToString(Vote_Labels[i].Tag) == "Spieler"+(i+1))
+                if (Convert.ToString(Vote_Labels[i].Tag) == "Spieler" + (i + 1))
                 {
-                    Vote_Labels[i].Text = "Votes: "+Convert.ToString(spielerVotes[i]);
+                    Vote_Labels[i].Text = "Votes: " + Convert.ToString(spielerVotes[i]);
                 }
             }
 
@@ -149,7 +149,18 @@ namespace TeamArbeitSpiel
             {
                 Voting vote = new Voting();
                 vote.votes = spielerVotes;
-                BeginneAuswertung(vote.VoteSystem());
+
+                if (vote.votesure())
+                {
+                    
+                    BeginneAuswertung(vote.VoteSystem());
+                }
+                else {
+
+                    MessageBox.Show("Verloren da sich das Team nicht einigen konnte");
+                    Close();
+                }
+
             }
         }
         List<Label> Vote_Labels = new List<Label>();
@@ -194,16 +205,16 @@ namespace TeamArbeitSpiel
         private void BeginneAuswertung(int index)
         {
 
-            int unterschied = Zahlen[index] - RandomZahl;
+            int unterschied = Math.Abs(Zahlen[index] - RandomZahl);
 
             for(int i = 0; i < Zahlen.Count;i++)
             {
-                if ((Zahlen[i] - RandomZahl) < unterschied)
+                if (Math.Abs((Zahlen[i] - RandomZahl)) < unterschied)
                 {
                     MessageBox.Show("Verloren");
                     Close();
                 }
-                else
+                else if(Math.Abs((Zahlen[i] - RandomZahl)) > unterschied)
                 { 
                     MessageBox.Show("Gewonnen");
                     Close();
