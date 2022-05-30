@@ -1,36 +1,45 @@
 # M213-Projektarbeit
-Abschlussprojekt von M213 mit Simon H. | Tim B. | Hao W. | Lian E.
+Final project of M213 with Simon H. | Tim B. | Hao W. | Lian E.
 
-## Aufgabe
-Sie entwickeln in Ihrer Gruppe ein Spiel oder eine Spielidee, welche gezielt ausgewählte Kompetenzen fördern soll und erstellen eine entsprechende Dokumentation dazu. Die Kompetenzen können Sie selbst definieren oder aus dem Kompetenzkatalog auswählen. Es müssen mindestens zwei Kompetenzen verfolgt werden.
-Zusätzlich erstellen Sie nach der Abgabe der schriftlichen Arbeit eine Präsentation und stellen Ihre Ergebnisse dem Rest der Klasse vor.
+## 📜 Task
+In your group, you develop a game or a game idea that is intended to promote selected competences and create the corresponding documentation. You can define the competences yourself or select them from the catalogue of competences. At least two competences must be pursued.
+In addition, after handing in the written work, you create a presentation and present your results to the rest of the class.
 
-## Details
-#### Gruppen:               
-Die Arbeit wird in 3er oder 4er Gruppen durchgeführt.
+## 📑 Details
+#### Groups:               
+The work is done in groups of 3 or 4.
 
-#### Form der Abgabe:       
-Die Dokumentation wird als Word-Datei und als PDF abgegeben. Die Präsentation wird als                               PowerPoint-Datei und als PDF-Handout abgegeben.
+#### Form of submission:       
+The documentation is handed in as a Word file and as a PDF. The presentation is handed in as a PowerPoint file and as a PDF handout.
 
-#### Bewertung:             
-Die Note für die Abschlussarbeit setzt sich aus der Bewertung des schriftlichen Teils und                             der Bewertung der Präsentation zu gleichen Stücken zusammen. Die Note der Abschlussarbeit                             macht 50% der Modulnote aus.
+#### Evaluation:             
+The mark for the final paper is made up of the assessment of the written part and the assessment of the presentation on equal pieces. The grade for the final paper makes up 50% of the module grade.
 
 
-## Zeitplan
-Für die Abschlussarbeit stehen Ihnen die Doppellektionen während dem Unterricht zur Verfügung.
-Sämtliche Abgaben, dazu zählen die beiden Meilensteine, die Schlussabgabe und die Abgabe der Präsentation, geschehen über Teams.
+## 🕰️ Timetable
+For the final project, the double lessons are available during the lessons.
+All submissions, including the two milestones, the final submission and the submission of the presentation, are done via teams.
 
 #### Kickoff:
-Semesterwoche 8 (Woche vom 4. April)
+Semester week 8 (week of 4 April)
 
-#### Meilenstein 1:
-Semesterwoche 9 (Abgabe bis am 15. April)
+#### Milestone 1:
+Semester week 9 (submission by 15 April)
 
-#### Meilenstein 2:
-Semesterwoche 12 (Abgabe bis am 20. Mai)
+#### Milestone 2:
+Semester week 12 (submission by 20 May)
 
-#### Abgabe der schriftlichen Dokumentation:
-Semesterwoche 14 (Abgabe bis am 3. Juni)
+#### Submission of the written documentation:
+Semester week 14 (submission by 3 June)
 
-#### Präsentation:
-Semesterwoche 16 und 17 (Woche vom 13. Juni und Woche vom 20. Juni)
+#### Presentation:
+Semester week 16 and 17 (week of 13 June and week of 20 June).
+
+## 🖥️ Installation guide
+/
+/
+/
+
+ ## 📝 License
+Project is [MIT licensed](./LICENSE.md)
+
