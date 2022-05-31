@@ -8,32 +8,32 @@ namespace TeamArbeitSpiel
 {
     public class Voting
     {
-        //public List<int> votes { get; set; }
+        //Properties
         public int[] votes { get; set; }
 
+        /// <summary>
+        /// Legt fest, welcher am meisten Votes hat
+        /// </summary>
+        /// <returns>Gibt den Index zurück des MaxValues</returns>
         public int VoteSystem()
         {
-            //return votes.IndexOf(votes.Max());
-
-
             int maxValue = votes.Max();
             int Index = votes.ToList().IndexOf(maxValue);
             return Index;
         }
 
-
-
+        /// <summary>
+        /// Schaut ob es der richtige Gewinner ist
+        /// </summary>
+        /// <returns>gibt true oder false zurück</returns>
         public bool votesure()
         {
             int voteWinner = 0;
             for (int i = 0; i < votes.Length; i++)
             {
-                
-
                 if (voteWinner <= votes[i])
                 {
-
-                    if ((voteWinner == votes[i])&&(voteWinner != 0)&&voteWinner==votes.Max())
+                    if ((voteWinner == votes[i]) && (voteWinner != 0) && voteWinner == votes.Max())
                     {
                         return false;
                     }

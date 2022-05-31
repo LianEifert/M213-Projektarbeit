@@ -46,7 +46,7 @@ namespace TeamArbeitSpiel
             this.txbAnzSpieler.Name = "txbAnzSpieler";
             this.txbAnzSpieler.Size = new System.Drawing.Size(72, 20);
             this.txbAnzSpieler.TabIndex = 0;
-            this.txbAnzSpieler.Text = "3-8";
+            this.txbAnzSpieler.Text = "3-9";
             this.txbAnzSpieler.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblAnzSpieler
@@ -57,9 +57,9 @@ namespace TeamArbeitSpiel
             this.lblAnzSpieler.Location = new System.Drawing.Point(269, 109);
             this.lblAnzSpieler.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblAnzSpieler.Name = "lblAnzSpieler";
-            this.lblAnzSpieler.Size = new System.Drawing.Size(277, 25);
+            this.lblAnzSpieler.Size = new System.Drawing.Size(271, 25);
             this.lblAnzSpieler.TabIndex = 1;
-            this.lblAnzSpieler.Text = "Geben sie den Spieleranzahl an";
+            this.lblAnzSpieler.Text = "Geben sie die Spieleranzahl an";
             // 
             // btnPlay
             // 
