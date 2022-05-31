@@ -171,15 +171,15 @@ namespace TeamArbeitSpiel
         }
         int votedPlayers = 0;
 
-        private void Vote_CLick(object sender, EventArgs e)
+        private void Vote_Click(object sender, EventArgs e)
         {
 
-            Button Vote_click = (Button)sender;
+            Button vote_click = (Button)sender;
             votedPlayers++;
 
             for (int i = 0; i < spielerVotes.Length; i++)
             {
-                if (Vote_click.Text == "Wähle Spieler " + (i + 1))
+                if (vote_click.Text == (i + 1) + ". Spieler wählen")
                 {
                     spielerVotes[i]++;
                 }
@@ -244,7 +244,7 @@ namespace TeamArbeitSpiel
                 Vote.Top = top;
                 this.Controls.Add(Vote);
                 top = top + 30;
-                Vote.Click += Vote_CLick;
+                Vote.Click += Vote_Click;
                 counter++;
             }
 
