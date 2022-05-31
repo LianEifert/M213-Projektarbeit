@@ -227,11 +227,13 @@ namespace TeamArbeitSpiel
 
                 Label Votes = new Label();
                 Votes.Tag = "Spieler" + (i + 1);
+                Votes.BackColor = Color.Transparent;
                 Votes.Text = "Votes: 0";
-                Votes.Left = left;
-                Votes.Top = 320;
+                Votes.Left = left +220;
+                Votes.Top = top + 5;
                 Vote_Labels.Add(Votes);
                 this.Controls.Add(Votes);
+
 
                 
 
