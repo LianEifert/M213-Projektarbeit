@@ -36,9 +36,9 @@ Semester week 14 (submission by 3 June)
 Semester week 16 and 17 (week of 13 June and week of 20 June).
 
 ## 🖥️ Installation guide
-/
-/
-/
+1. Download the installation package (releases)
+2. Run the .exe installer and install the project
+3. Open it under the installed path 
 
  ## 📝 License
 Project is [MIT licensed](./LICENSE.md)
